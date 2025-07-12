@@ -1,0 +1,38 @@
+﻿@model IEnumerable<Lig>
+
+@{
+    Layout = "_Layout";
+}
+
+@section Styles {
+    <link rel="stylesheet" href="~/css/lig.css" />
+}
+
+<div class="lig-container">
+    <h1 class="lig-title">Lig Listesi</h1>
+    <a href="@Url.Action("Create", "Lig")" class="btn btn-warning mb-3">+ Yeni Lig Ekle</a>
+    <div class="table-responsive">
+        <table class="table table-striped table-bordered">
+            <thead>
+                <tr>
+                    <th>🏆 Ad</th>
+                    <th>Takım Sayısı</th>
+                    <th>İşlemler</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var lig in Model)
+                {
+                    <tr>
+                        <td>@lig.Ad</td>
+                        <td>@(lig.Takimlar?.Count() ?? 0)</td>
+                        <td>
+                            <a href="@Url.Action("Edit", "Lig", new { id = lig.Id })" class="btn btn-primary btn-sm">Düzenle</a>
+                            <a href="@Url.Action("Delete", "Lig", new { id = lig.Id })" class="btn btn-danger btn-sm" onclick="return confirm('Silmek istediğinize emin misiniz?');">Sil</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

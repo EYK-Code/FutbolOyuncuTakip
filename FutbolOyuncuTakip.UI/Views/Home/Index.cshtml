@@ -1,0 +1,45 @@
+﻿@{
+    ViewData["Title"] = "Anasayfa";
+}
+
+@{
+    Layout = "_Layout";
+}
+
+@section Styles {
+    <link rel="stylesheet" href="~/css/home.css" />
+}
+
+<div class="home-container">
+    <h1 class="home-title">⚽ Futbol Oyuncu Takip Sistemi</h1>
+    <p class="home-desc">
+        <b>Futbol Oyuncu Takip Sistemi</b> ile takımlarınızı, liglerinizi ve futbolcularınızı kolayca yönetin.<br />
+        Tüm futbol organizasyonunuzu tek bir yerden, hızlı ve güvenli şekilde kontrol edin!
+    </p>
+    <div class="row">
+        <div class="home-card">
+            <div class="card-body">
+                <div class="home-card-icon">🏟️</div>
+                <h5 class="card-title">Takımlar</h5>
+                <p class="card-text">Takım ekle, düzenle, sil ve takım detaylarını görüntüle.</p>
+                <a href="@Url.Action("Index", "Takim")" class="btn btn-primary">Takım Listesi</a>
+            </div>
+        </div>
+        <div class="home-card">
+            <div class="card-body">
+                <div class="home-card-icon">👟</div>
+                <h5 class="card-title">Futbolcular</h5>
+                <p class="card-text">Futbolcu ekle, düzenle, sil ve oyuncu bilgilerini yönet.</p>
+                <a href="@Url.Action("Index", "Futbolcu")" class="btn btn-success">Futbolcu Listesi</a>
+            </div>
+        </div>
+        <div class="home-card">
+            <div class="card-body">
+                <div class="home-card-icon">🥇</div>
+                <h5 class="card-title">Ligler</h5>
+                <p class="card-text">Lig ekle, düzenle, sil ve liglere takımları ata.</p>
+                <a href="@Url.Action("Index", "Lig")" class="btn btn-warning">Lig Listesi</a>
+            </div>
+        </div>
+    </div>
+</div>

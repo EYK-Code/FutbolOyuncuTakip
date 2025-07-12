@@ -1,0 +1,38 @@
+﻿@model IEnumerable<Takim>
+
+@{
+    Layout = "_Layout";
+}
+
+@section Styles {
+    <link rel="stylesheet" href="~/css/takim.css" />
+}
+
+<div class="takim-container">
+    <h1 class="takim-title">Takım Listesi</h1>
+    <a href="@Url.Action("Create", "Takim")" class="btn btn-primary mb-3">+ Yeni Takım Ekle</a>
+    <div class="table-responsive">
+        <table class="table table-striped table-bordered">
+            <thead>
+                <tr>
+                    <th>🏟️ Ad</th>
+                    <th>🥇 Lig</th>
+                    <th>İşlemler</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var takim in Model)
+                {
+                    <tr>
+                        <td>@takim.Ad</td>
+                        <td>@takim.Lig?.Ad</td>
+                        <td>
+                            <a href="@Url.Action("Edit", "Takim", new { id = takim.Id })" class="btn btn-primary btn-sm">Düzenle</a>
+                            <a href="@Url.Action("Delete", "Takim", new { id = takim.Id })" class="btn btn-danger btn-sm" onclick="return confirm('Silmek istediğinize emin misiniz?');">Sil</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

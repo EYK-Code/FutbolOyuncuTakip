@@ -1,0 +1,40 @@
+﻿@model IEnumerable<Futbolcu>
+
+@{
+    Layout = "_Layout";
+}
+
+@section Styles {
+    <link rel="stylesheet" href="~/css/futbolcu.css" />
+}
+
+<div class="futbolcu-container">
+    <h1 class="futbolcu-title">Futbolcu Listesi</h1>
+    <a href="@Url.Action("Create", "Futbolcu")" class="btn btn-success mb-3">+ Yeni Futbolcu Ekle</a>
+    <div class="table-responsive">
+        <table class="table table-striped table-bordered">
+            <thead>
+                <tr>
+                    <th>👤 Ad Soyad</th>
+                    <th>⚽ Mevki</th>
+                    <th>🏟️ Takım</th>
+                    <th>İşlemler</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach (var futbolcu in Model)
+                {
+                    <tr>
+                        <td>@futbolcu.AdSoyad</td>
+                        <td>@futbolcu.Mevki</td>
+                        <td>@futbolcu.Takim?.Ad</td>
+                        <td>
+                            <a href="@Url.Action("Edit", "Futbolcu", new { id = futbolcu.Id })" class="btn btn-primary btn-sm">Düzenle</a>
+                            <a href="@Url.Action("Delete", "Futbolcu", new { id = futbolcu.Id })" class="btn btn-danger btn-sm" onclick="return confirm('Silmek istediğinize emin misiniz?');">Sil</a>
+                        </td>
+                    </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+</div>

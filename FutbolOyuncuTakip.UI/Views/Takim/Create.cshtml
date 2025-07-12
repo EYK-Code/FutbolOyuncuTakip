@@ -1,0 +1,31 @@
+﻿@model Takim
+
+@{
+    Layout = "_Layout";
+}
+
+@section Styles {
+    <link rel="stylesheet" href="~/css/takim.css" />
+}
+
+<div class="takim-container">
+    <h1 class="takim-title">Yeni Takım Ekle</h1>
+    <form asp-action="Create" method="post" class="takim-form">
+        <div class="form-group">
+            <label for="Ad">🏟️ Takım Adı</label>
+            <input asp-for="Ad" class="form-control" required autocomplete="off" />
+        </div>
+        <div class="form-group">
+            <label for="LigId">🥇 Lig Seçin</label>
+            <select asp-for="LigId" class="form-control" required>
+                <option value="">Lig seçiniz</option>
+                @foreach (var lig in ViewBag.Ligler as List<Lig>)
+                {
+                    <option value="@lig.Id">@lig.Ad</option>
+                }
+            </select>
+        </div>
+        <button type="submit" class="btn btn-primary">Takım Ekle</button>
+        <a href="@Url.Action("Index", "Takim")" class="btn btn-danger">İptal</a>
+    </form>
+</div>

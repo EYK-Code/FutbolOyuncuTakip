@@ -1,0 +1,21 @@
+﻿@model Lig
+
+@{
+    Layout = "_Layout";
+}
+
+@section Styles {
+    <link rel="stylesheet" href="~/css/lig.css" />
+}
+
+<div class="lig-container">
+    <h1 class="lig-title">Yeni Lig Ekle</h1>
+    <form asp-action="Create" method="post" class="lig-form">
+        <div class="form-group">
+            <label for="Ad">🏆 Lig Adı</label>
+            <input asp-for="Ad" class="form-control" required autocomplete="off" />
+        </div>
+        <button type="submit" class="btn btn-warning">Lig Ekle</button>
+        <a href="@Url.Action("Index", "Lig")" class="btn btn-danger">İptal</a>
+    </form>
+</div>

@@ -1,0 +1,164 @@
+﻿body {
+    background: linear-gradient(120deg, #00c6ff 0%, #0072ff 100%);
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+.futbolcu-container {
+    background: rgba(255, 255, 255, 0.85);
+    border-radius: 24px;
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.18);
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    padding: 40px 32px 32px 32px;
+    margin: 48px auto 0 auto;
+    max-width: 950px;
+    border: 1.5px solid rgba(255,255,255,0.25);
+    animation: fadeInDown 0.8s cubic-bezier(.39,.575,.565,1) both;
+}
+
+@keyframes fadeInDown {
+    0% {
+        opacity: 0;
+        transform: translateY(-40px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.futbolcu-title {
+    color: #0072ff;
+    font-size: 2.3rem;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    margin-bottom: 28px;
+    text-shadow: 0 2px 12px rgba(0, 114, 255, 0.10);
+    text-align: center;
+}
+
+.futbolcu-form label {
+    color: #009688;
+    font-weight: 700;
+    margin-bottom: 7px;
+    letter-spacing: 0.5px;
+}
+
+.futbolcu-form input, .futbolcu-form select {
+    width: 100%;
+    padding: 12px 16px;
+    border: 1.5px solid #b2ebf2;
+    border-radius: 8px;
+    background: rgba(0, 198, 255, 0.07);
+    font-size: 1.05rem;
+    margin-bottom: 18px;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+    .futbolcu-form input:focus, .futbolcu-form select:focus {
+        border-color: #0072ff;
+        box-shadow: 0 0 0 2px #b2ebf2;
+        outline: none;
+    }
+
+button, .btn, input[type="submit"] {
+    background: linear-gradient(90deg, #00c6ff 0%, #0072ff 100%);
+    color: #fff;
+    border: none;
+    padding: 12px 32px;
+    border-radius: 8px;
+    font-size: 1.08rem;
+    font-weight: 700;
+    cursor: pointer;
+    box-shadow: 0 2px 12px rgba(0, 114, 255, 0.10);
+    transition: background 0.2s, transform 0.2s, box-shadow 0.2s;
+    margin-right: 8px;
+    letter-spacing: 0.5px;
+}
+
+    button:hover, .btn:hover, input[type="submit"]:hover {
+        background: linear-gradient(90deg, #009688 0%, #00c6ff 100%);
+        transform: translateY(-2px) scale(1.04);
+        box-shadow: 0 6px 24px rgba(0, 198, 255, 0.18);
+    }
+
+.table {
+    background: rgba(255,255,255,0.97);
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 2px 16px rgba(0, 114, 255, 0.10);
+    margin-top: 18px;
+}
+
+    .table th {
+        background: #00c6ff;
+        color: #fff;
+        font-weight: 800;
+        border-bottom: 2px solid #b2ebf2;
+        text-align: center;
+        letter-spacing: 1px;
+    }
+
+    .table td {
+        text-align: center;
+        vertical-align: middle;
+        font-size: 1.05rem;
+        color: #0072ff;
+        font-weight: 600;
+    }
+
+.table-striped > tbody > tr:nth-of-type(odd) {
+    background-color: #e0f7fa;
+}
+
+.table-striped > tbody > tr:nth-of-type(even) {
+    background-color: #f8fdff;
+}
+
+a.btn-primary, a.btn-success, a.btn-danger {
+    color: #fff !important;
+    font-weight: 600;
+    border-radius: 6px;
+    padding: 7px 18px;
+    margin: 0 2px;
+    font-size: 0.98rem;
+    transition: background 0.2s, box-shadow 0.2s;
+}
+
+a.btn-primary {
+    background: #0072ff;
+}
+
+a.btn-success {
+    background: #009688;
+}
+
+a.btn-danger {
+    background: #d32f2f;
+}
+
+a.btn-primary:hover {
+    background: #005bb5;
+}
+
+a.btn-success:hover {
+    background: #00796b;
+}
+
+a.btn-danger:hover {
+    background: #b71c1c;
+}
+
+@media (max-width: 900px) {
+    .futbolcu-container {
+        padding: 18px 6px 18px 6px;
+        margin-top: 18px;
+    }
+
+    .futbolcu-title {
+        font-size: 1.5rem;
+    }
+}

@@ -1,0 +1,104 @@
+﻿body {
+    background: linear-gradient(120deg, #e0eafc 0%, #cfdef3 100%);
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+.privacy-container {
+    background: #f4f8fb;
+    border-radius: 18px;
+    box-shadow: 0 8px 32px 0 rgba(33, 150, 243, 0.10), 0 1.5px 0 #b3c6e7;
+    padding: 44px 36px 36px 36px;
+    margin: 56px auto 0 auto;
+    max-width: 700px;
+    border: 2px solid #b3c6e7;
+    animation: privacyFadeIn 0.7s cubic-bezier(.39,.575,.565,1) both;
+}
+
+@keyframes privacyFadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(40px) scale(0.98);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.privacy-title {
+    color: #2196f3;
+    font-size: 2.1rem;
+    font-weight: 900;
+    letter-spacing: 1.2px;
+    margin-bottom: 24px;
+    text-shadow: 0 2px 12px rgba(33, 150, 243, 0.10);
+    text-align: center;
+}
+
+.privacy-desc {
+    font-size: 1.15rem;
+    color: #455a64;
+    margin-bottom: 28px;
+    background: rgba(255,255,255,0.8);
+    border-radius: 10px;
+    padding: 14px 22px;
+    box-shadow: 0 2px 12px rgba(33, 150, 243, 0.07);
+    text-align: center;
+}
+
+.privacy-list {
+    font-size: 1.05rem;
+    color: #37474f;
+    margin-bottom: 24px;
+    padding-left: 24px;
+}
+
+    .privacy-list li {
+        margin-bottom: 10px;
+        line-height: 1.7;
+        position: relative;
+    }
+
+        .privacy-list li::before {
+            content: "🔒";
+            margin-right: 8px;
+            color: #2196f3;
+            font-size: 1.1em;
+        }
+
+.privacy-contact {
+    font-size: 1.05rem;
+    color: #1976d2;
+    text-align: center;
+    margin-top: 18px;
+}
+
+    .privacy-contact a {
+        color: #1976d2;
+        text-decoration: underline;
+        font-weight: 600;
+        transition: color 0.2s;
+    }
+
+        .privacy-contact a:hover {
+            color: #0d47a1;
+        }
+
+@media (max-width: 700px) {
+    .privacy-container {
+        padding: 18px 6px 18px 6px;
+        margin-top: 18px;
+    }
+
+    .privacy-title {
+        font-size: 1.3rem;
+    }
+
+    .privacy-desc {
+        font-size: 1rem;
+        padding: 10px 4px;
+    }
+}

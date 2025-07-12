@@ -1,0 +1,36 @@
+﻿@model Futbolcu
+
+@{
+    Layout = "_Layout";
+}
+
+@section Styles {
+    <link rel="stylesheet" href="~/css/futbolcu.css" />
+}
+
+<div class="futbolcu-container">
+    <h1 class="futbolcu-title">Futbolcu Düzenle</h1>
+    <form asp-action="Edit" method="post" class="futbolcu-form">
+        <input type="hidden" asp-for="Id" />
+        <div class="form-group">
+            <label for="AdSoyad">👤 Ad Soyad</label>
+            <input asp-for="AdSoyad" class="form-control" required autocomplete="off" />
+        </div>
+        <div class="form-group">
+            <label for="Mevki">⚽ Mevki</label>
+            <input asp-for="Mevki" class="form-control" required autocomplete="off" />
+        </div>
+        <div class="form-group">
+            <label for="TakimId">🏟️ Takım Seçin</label>
+            <select asp-for="TakimId" class="form-control" required>
+                <option value="">Takım seçiniz</option>
+                @foreach (var takim in ViewBag.Takimlar as List<Takim>)
+                {
+                    <option value="@takim.Id" selected="@(takim.Id == Model.TakimId)">@takim.Ad</option>
+                }
+            </select>
+        </div>
+        <button type="submit" class="btn btn-primary">Kaydet</button>
+        <a href="@Url.Action("Index", "Futbolcu")" class="btn btn-danger">İptal</a>
+    </form>
+</div>
